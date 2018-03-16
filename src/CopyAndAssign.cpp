@@ -2,7 +2,7 @@
 #include "CopyAndAssign.h"
 #include <string.h>
 
-CopyAndAssign::CopyAndAssign(){
+CopyAndAssign::CopyAndAssign():cp(0){
 	
 	//create some memory for Demp purposes
 	cp=new char[20];
@@ -20,6 +20,7 @@ CopyAndAssign::~CopyAndAssign()
 ////DO NOT EDIT...assignment operator
 CopyAndAssign& CopyAndAssign::operator=( const CopyAndAssign& rhs )
 {
+	destroy();
 	//only take action if not auto-assignment
 	if ( this != &rhs )
 		copy( rhs );
@@ -31,8 +32,9 @@ CopyAndAssign& CopyAndAssign::operator=( const CopyAndAssign& rhs )
 
 //ADD INITIALIZER LISTS IF USED...copy constructor
 //OTHERWISE DO NOT EDIT
-CopyAndAssign::CopyAndAssign( const CopyAndAssign &rhs)
+CopyAndAssign::CopyAndAssign( const CopyAndAssign &rhs):cp(0)
 {
+	destroy();
 	copy( rhs );
 }
 
