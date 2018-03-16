@@ -7,16 +7,15 @@ public:
 	CopyAndAssign();
 
 	virtual ~CopyAndAssign();
-
-	// overloaded assignment
-	CopyAndAssign &operator=(CopyAndAssign const &other);
-
-	//copy constructor, destructor
-	CopyAndAssign(CopyAndAssign const &other);
-
 private:
+	// overloaded assignment
+	CopyAndAssign &operator=(const CopyAndAssign &other);
+
+	//copy constructor
+	CopyAndAssign(const CopyAndAssign &other);
+
 	//Edit the following
-	virtual void copy(CopyAndAssign const &other);
+	virtual void copy(const CopyAndAssign &other);
 	virtual void destroy(void);
 
 	//to illustrate
