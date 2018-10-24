@@ -7,7 +7,8 @@ public:
 	CopyAndAssign();
 
 	virtual ~CopyAndAssign();
-	
+
+//private:
 	//NOTE: make the following declarations private
 	//and you cannot copy or assign!  But friends and object 
 	//member functions can still access them.  You can 
@@ -20,8 +21,7 @@ public:
 	//copy constructor
 	CopyAndAssign(const CopyAndAssign &other);
 
-private:
-
+private:	
 	//Edit the following
 	virtual void copy(const CopyAndAssign &other);
 	virtual void destroy(void);

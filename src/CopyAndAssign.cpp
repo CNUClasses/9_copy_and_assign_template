@@ -4,7 +4,7 @@
 
 CopyAndAssign::CopyAndAssign():cp(0){
 	
-	//create some memory for Demp purposes
+	//create some memory for Demo purposes
 	cp=new char[20];
 	memset(cp,0,20);
 	memcpy(cp,"I Like Flowers",14);
@@ -17,24 +17,22 @@ CopyAndAssign::~CopyAndAssign()
 	destroy(); 
 }
 
-////DO NOT EDIT...assignment operator
+//////DO NOT EDIT...assignment operator
 CopyAndAssign& CopyAndAssign::operator=( const CopyAndAssign& rhs )
 {
-	destroy();
 	//only take action if not auto-assignment
-	if ( this != &rhs )
+	if ( this != &rhs ){
 		copy( rhs );
+	}
 
 	// return (reference to) current object for
 	// chain-assignments
 	return *this;
 }
 
-//ADD INITIALIZER LISTS IF USED...copy constructor
-//OTHERWISE DO NOT EDIT
+//ADD INITIALIZER LISTS IF USED,OTHERWISE DO NOT EDIT...copy constructor
 CopyAndAssign::CopyAndAssign( const CopyAndAssign &rhs):cp(0)
 {
-	destroy();
 	copy( rhs );
 }
 
